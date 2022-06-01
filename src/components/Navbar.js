@@ -1,6 +1,7 @@
  import React from 'react'
+ import PropTypes from 'prop-types'
  
- export default function  (props) {
+ export default function Navbar(props) {
    return (
     <nav className="navbar navbar-expand-lg bg-light">
     <div className="container-fluid">
@@ -14,7 +15,7 @@
             <a className="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">About</a>
+            <a className="nav-link" href="/">{props.aboutText}</a>
           </li>
         </ul>
         <form className="d-flex" role="search">
@@ -26,4 +27,14 @@
   </nav>
    )
  }
+
+ Navbar.propTypes = {
+   title : PropTypes.string.isRequired,
+   aboutText : PropTypes.string.isRequired
+  }
+
+ Navbar.defaultProps = {
+  title : 'Set title here',
+  aboutText : 'About'
+ };
  
