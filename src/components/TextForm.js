@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 export default function TextForm(props) {
   const [text, setText] = useState('');
@@ -10,6 +10,10 @@ export default function TextForm(props) {
     setText(text.toLowerCase());
   }
 
+  const handleClearClick = () => {
+    setText('');
+  }
+
   const handleOnChange = (event) => {
     setText(event.target.value);
   }
@@ -17,22 +21,21 @@ export default function TextForm(props) {
   return (
     <>
       <div className='container'>
-        <h1>{props.heading}</h1>
+        <h2>{props.heading}</h2>
+
         <div className="mb-3">
           <textarea className="form-control" id="myBox" onChange={handleOnChange} value={text} rows="8"></textarea>
         </div>
-      <button className="btn btn-primary mx-2" onClick={handleUppercaseClick}> Convert to Uppercase </button>
-      <button className="btn btn-primary MX-2" onClick={handleLowercaseClick}> Convert to Lowercase </button>
-    </div> 
 
+        <div className="container my-3">
+          <p>Character Count : {text.length} | Word Count : {text.split(" ").length} | Line Count : {text.split("\n").length} | Minutes to read : {0.008 * text.split(" ").length} </p>
+        </div>
 
-    <div className="container my-3">
-      <h2>Your text summary</h2>
-      <p>{text.split(" ").length} words {text.length} characers</p>
-      <p>{0.008 * text.split(" ").length} Minutes read</p>
-      <h2>Preview</h2>
-      <p>{text}</p>
-    </div>
-  </>
+        <button className="btn btn-primary mx-2" onClick={handleUppercaseClick}> UPPER CASE </button>
+        <button className="btn btn-primary mx-2" onClick={handleLowercaseClick}> lower case </button>
+        <button className="btn btn-primary mx-2" onClick={handleClearClick}> Clear </button>
+
+      </div>
+    </>
   )
 }
