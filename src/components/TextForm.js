@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 export default function TextForm(props) {
   const [text, setText] = useState('');
+
   const handleUppercaseClick = () => {
     setText(text.toUpperCase());
     props.showAlert("Converted to UPPERCASE!", "success");
@@ -43,23 +44,21 @@ export default function TextForm(props) {
   return (
     <>
       <div className='container'>
-        <h3>{props.heading}</h3>
-
+        <hr />
+        <h2 class="h1-responsive font-weight-bold text-center">{props.heading}</h2>
+        <hr />
         <div className="mb-3">
           <textarea className="form-control" id="myBox" onChange={handleOnChange} value={text} rows="10" style={{ backgroundColor: props.mode === 'light' ? 'white' : '#e3e7ee' }} ></textarea>
         </div>
-
         <div className="container my-3">
           <p>Character Count : {text.length} | Word Count : {text === "" ? 0 : text.split(" ").length} | Line Count : {text === "" ? 0 : text.split("\n").length} | Minutes to read : {text === "" ? 0 : 0.008 * text.split(" ").length} </p>
         </div>
-
         <button className="btn btn-primary mx-2" onClick={handleUppercaseClick}> UPPERCASE </button>
         <button className="btn btn-primary mx-2" onClick={handleLowercaseClick}> lowercase </button>
         <button className="btn btn-primary mx-2" onClick={handleRemoveExtraSpaces}> Remove Extra Spaces </button>
         <button className="btn btn-primary mx-2" onClick={handleSortAlphabetically}> Sort Alphabetically </button>
         <button className="btn btn-primary mx-2" onClick={handleCopyClick}> Copy to Clipboard </button>
         <button className="btn btn-primary mx-2" onClick={handleClearClick}> Clear </button>
-
       </div>
     </>
   )
