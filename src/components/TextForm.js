@@ -4,14 +4,17 @@ export default function TextForm(props) {
   const [text, setText] = useState('');
   const handleUppercaseClick = () => {
     setText(text.toUpperCase());
+    props.showAlert("Converted to UPPERCASE!", "success");
   }
 
   const handleLowercaseClick = () => {
     setText(text.toLowerCase());
+    props.showAlert("Converted to lowercase!", "success");
   }
 
   const handleClearClick = () => {
     setText('');
+    props.showAlert("Text Cleared!", "success");
   }
 
   const handleOnChange = (event) => {
@@ -22,16 +25,19 @@ export default function TextForm(props) {
     let text = document.getElementById('myBox');
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Copied to Clipboard!", "success");
   }
 
   const handleRemoveExtraSpaces = () => {
     let newText = text.split(/[ ]+/); //split by spaces
     setText(newText.join(" ")); // join with single space
+    props.showAlert("Removed Extra Spaces!", "success");
   }
 
   const handleSortAlphabetically = () => {
     let newText = text.split(" ").sort();
     setText(newText.join("\n"));
+    props.showAlert("Alphabetically Sorted!", "success");
   }
 
   return (
@@ -47,8 +53,8 @@ export default function TextForm(props) {
           <p>Character Count : {text.length} | Word Count : {text === "" ? 0 : text.split(" ").length} | Line Count : {text === "" ? 0 : text.split("\n").length} | Minutes to read : {text === "" ? 0 : 0.008 * text.split(" ").length} </p>
         </div>
 
-        <button className="btn btn-primary mx-2" onClick={handleUppercaseClick}> UPPER CASE </button>
-        <button className="btn btn-primary mx-2" onClick={handleLowercaseClick}> lower case </button>
+        <button className="btn btn-primary mx-2" onClick={handleUppercaseClick}> UPPERCASE </button>
+        <button className="btn btn-primary mx-2" onClick={handleLowercaseClick}> lowercase </button>
         <button className="btn btn-primary mx-2" onClick={handleRemoveExtraSpaces}> Remove Extra Spaces </button>
         <button className="btn btn-primary mx-2" onClick={handleSortAlphabetically}> Sort Alphabetically </button>
         <button className="btn btn-primary mx-2" onClick={handleCopyClick}> Copy to Clipboard </button>
