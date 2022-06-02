@@ -40,11 +40,11 @@ export default function TextForm(props) {
         <h2>{props.heading}</h2>
 
         <div className="mb-3">
-          <textarea className="form-control" id="myBox" onChange={handleOnChange} value={text} rows="8"></textarea>
+          <textarea className="form-control" id="myBox" onChange={handleOnChange} value={text} rows="10" style={{ backgroundColor: props.mode === 'light' ? 'white' : '#e3e7ee' }} ></textarea>
         </div>
 
         <div className="container my-3">
-          <p>Character Count : {text.length} | Word Count : {text.split(" ").length} | Line Count : {text.split("\n").length} | Minutes to read : {0.008 * text.split(" ").length} </p>
+          <p>Character Count : {text.length} | Word Count : {text === "" ? 0 : text.split(" ").length} | Line Count : {text === "" ? 0 : text.split("\n").length} | Minutes to read : {text === "" ? 0 : 0.008 * text.split(" ").length} </p>
         </div>
 
         <button className="btn btn-primary mx-2" onClick={handleUppercaseClick}> UPPER CASE </button>
