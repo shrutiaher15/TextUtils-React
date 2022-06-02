@@ -25,8 +25,8 @@ export default function TextForm(props) {
   }
 
   const handleRemoveExtraSpaces = () => {
-    let newText = text.split(/[ ]+/);
-    setText(newText.join(" "));
+    let newText = text.split(/[ ]+/); //split by spaces
+    setText(newText.join(" ")); // join with single space
   }
 
   return (
