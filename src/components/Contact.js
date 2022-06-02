@@ -1,6 +1,9 @@
 import React from 'react'
 
 export default function Contact() {
+    const handleOnSendClick = () => {
+        alert("Details Submitted");
+    }
     return (
         <div>
             <hr className="my-20" />
@@ -42,7 +45,7 @@ export default function Contact() {
                             </div>
                         </form>
                         <div class="text-center text-md-left">
-                            <a class="btn btn-primary">Send</a>
+                            <a class="btn btn-primary" onClick={handleOnSendClick}>Send</a>
                         </div>
                         <div class="status"></div>
                     </div>

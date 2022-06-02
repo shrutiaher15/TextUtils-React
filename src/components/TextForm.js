@@ -53,12 +53,12 @@ export default function TextForm(props) {
         <div className="container my-3">
           <p>Character Count : {text.length} | Word Count : {text === "" ? 0 : text.split(" ").length} | Line Count : {text === "" ? 0 : text.split("\n").length} | Minutes to read : {text === "" ? 0 : 0.008 * text.split(" ").length} </p>
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleUppercaseClick}> UPPERCASE </button>
-        <button className="btn btn-primary mx-2" onClick={handleLowercaseClick}> lowercase </button>
-        <button className="btn btn-primary mx-2" onClick={handleRemoveExtraSpaces}> Remove Extra Spaces </button>
-        <button className="btn btn-primary mx-2" onClick={handleSortAlphabetically}> Sort Alphabetically </button>
-        <button className="btn btn-primary mx-2" onClick={handleCopyClick}> Copy to Clipboard </button>
-        <button className="btn btn-primary mx-2" onClick={handleClearClick}> Clear </button>
+        <button className="btn btn-primary mx-2 my-2" onClick={handleUppercaseClick}> UPPERCASE </button>
+        <button className="btn btn-primary mx-2 my-2" onClick={handleLowercaseClick}> lowercase </button>
+        <button className="btn btn-primary mx-2 my-2" onClick={handleRemoveExtraSpaces}> Remove Extra Spaces </button>
+        <button className="btn btn-primary mx-2 my-2" onClick={handleSortAlphabetically}> Sort Alphabetically </button>
+        <button className="btn btn-primary mx-2 my-2" onClick={handleCopyClick}> Copy to Clipboard </button>
+        <button className="btn btn-primary mx-2 my-2" onClick={handleClearClick}> Clear </button>
       </div>
     </>
   )
