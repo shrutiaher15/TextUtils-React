@@ -29,6 +29,11 @@ export default function TextForm(props) {
     setText(newText.join(" ")); // join with single space
   }
 
+  const handleSortAlphabetically = () => {
+    let newText = text.split(" ").sort();
+    setText(newText.join("\n"));
+  }
+
   return (
     <>
       <div className='container'>
@@ -45,6 +50,7 @@ export default function TextForm(props) {
         <button className="btn btn-primary mx-2" onClick={handleUppercaseClick}> UPPER CASE </button>
         <button className="btn btn-primary mx-2" onClick={handleLowercaseClick}> lower case </button>
         <button className="btn btn-primary mx-2" onClick={handleRemoveExtraSpaces}> Remove Extra Spaces </button>
+        <button className="btn btn-primary mx-2" onClick={handleSortAlphabetically}> Sort Alphabetically </button>
         <button className="btn btn-primary mx-2" onClick={handleCopyClick}> Copy to Clipboard </button>
         <button className="btn btn-primary mx-2" onClick={handleClearClick}> Clear </button>
 
