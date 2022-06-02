@@ -18,6 +18,12 @@ export default function TextForm(props) {
     setText(event.target.value);
   }
 
+  const handleCopyClick = () => {
+    var text = document.getElementById('myBox');
+    text.select();
+    navigator.clipboard.writeText(text.value);
+  }
+
   return (
     <>
       <div className='container'>
@@ -33,6 +39,7 @@ export default function TextForm(props) {
 
         <button className="btn btn-primary mx-2" onClick={handleUppercaseClick}> UPPER CASE </button>
         <button className="btn btn-primary mx-2" onClick={handleLowercaseClick}> lower case </button>
+        <button className="btn btn-primary mx-2" onClick={handleCopyClick}> Copy to Clipboard </button>
         <button className="btn btn-primary mx-2" onClick={handleClearClick}> Clear </button>
 
       </div>
