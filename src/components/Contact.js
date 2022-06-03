@@ -45,7 +45,7 @@ export default function Contact() {
                             </div>
                         </form>
                         <div class="text-center text-md-left">
-                            <a class="btn btn-primary" onClick={handleOnSendClick}>Send</a>
+                            <a class="btn btn-primary" onClick={handleOnSendClick} href="/">Send</a>
                         </div>
                         <div class="status"></div>
                     </div>
