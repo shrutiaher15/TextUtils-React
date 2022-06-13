@@ -11,7 +11,7 @@ export default function About(props) {
             <h2 class="h1-responsive font-weight-bold text-center">About Us</h2>
             <hr />
         </div>
-        <div className="accordion" id="accordionExample">
+        <div className="accordion my-5" id="accordionExample">
             <div className="accordion-item">
                 <h2 className="accordion-header" id="headingOne">
                     <button className="accordion-button" type="button" style={myStyle} data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
