@@ -52,7 +52,7 @@ export default function TextForm(props) {
           <textarea className="form-control" id="myBox" onChange={handleOnChange} value={text} rows="10" style={{ backgroundColor: props.mode === 'light' ? 'white' : '#e3e7ee' }} ></textarea>
         </div>
         <div className="container my-3">
-          <p>Character Count : {text.length} | Word Count : {text.split(" ").filter((element) => { return element.length !== 0 }).length} | Line Count : {text.split("\n").filter((element) => { return element.length !== 0 }).length} | Minutes to read : {text === "" ? 0 : 0.008 * text.split(" ").length} </p>
+          <p>Character Count : {text.length} | Word Count : {text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} | Line Count : {text.split("\n").filter((element) => { return element.length !== 0 }).length} | Minutes to read : {text === "" ? 0 : 0.008 * text.split(" ").length} </p>
         </div>
         <button className="btn btn-primary mx-2 my-2" onClick={handleUppercaseClick} disabled={text.length === 0}> UPPERCASE </button>
         <button className="btn btn-primary mx-2 my-2" onClick={handleLowercaseClick} disabled={text.length === 0}> lowercase </button>
