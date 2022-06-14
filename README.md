@@ -1,5 +1,5 @@
 # Text-Utils React App 
-[Demo](https://shrutiaher15.github.io/TextUtils-React/).
+[Demo](http://shrutiaher15.github.io/text-utils/).
  
 TextUtils is a web-based utility which can be used to manipulate your text the way you want
 
